@@ -47,7 +47,14 @@ function getGame():Game {
     if (description.trim() == ""){
         IsValidDate = false;
         descriptionTextBOx.nextElementSibling.textContent = "You must provide a description of the game";
-        
+
+    }
+
+    let expirationDate = expirationDateTextBox.value;
+    let expirationDateCheck = Date.parse(expirationDate);
+    if (isNaN(expirationDateCheck)) {
+        IsValidDate = false;
+        expirationDateTextBox.nextElementSibling.textContent = "Expiration date must be a valid date";
     }
 }
 
