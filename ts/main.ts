@@ -56,8 +56,28 @@ function getGame():Game {
         IsValidDate = false;
         expirationDateTextBox.nextElementSibling.textContent = "Expiration date must be a valid date";
     }
+
+    if (IsValidDate) {
+        let addedGame = new Game();
+        addedGame.name = name;
+        addedGame.price = price;
+        addedGame.description = description;
+        addedGame.expirationDate = new Date(expirationDate);
+
+        return addedGame;
+    }
+    return null;
 }
 
 function addGame(g:Game):void{
     alert("Data was valid, game added");
+}
+
+function cleasrAllErrorMessages() {
+    let allSpans = document.querySelectorAll("form span.error_msg");
+    
+    for (let i = 0; i < allSpans.length; i++) {
+        let currentSpan = allSpans[i];
+        currentSpan.textContent = "";
+    }
 }
