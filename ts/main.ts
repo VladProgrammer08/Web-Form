@@ -36,6 +36,12 @@ function getGame():Game {
         nameErrorSpan.textContent = "You must provide a name of the game";
 
     }
+
+    let price = parseFloat(priceTextBox.value);
+    if (isNaN(price) || price < 0) {
+        IsValidDate = false;
+        priceTextBox.nextElementSibling.textContent = "Price must be a positive number";
+    }
 }
 
 function addGame(g:Game):void{
