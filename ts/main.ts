@@ -79,5 +79,6 @@ function cleasrAllErrorMessages() {
     for (let i = 0; i < allSpans.length; i++) {
         let currentSpan = allSpans[i];
         currentSpan.textContent = "";
+        
     }
 }
