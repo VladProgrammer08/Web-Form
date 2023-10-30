@@ -38,9 +38,16 @@ function getGame():Game {
     }
 
     let price = parseFloat(priceTextBox.value);
-    if (isNaN(price) || price < 0) {
+    if (isNaN(price) || price < 0){
         IsValidDate = false;
         priceTextBox.nextElementSibling.textContent = "Price must be a positive number";
+    }
+
+    let description = descriptionTextBOx.value;
+    if (description.trim() == ""){
+        IsValidDate = false;
+        descriptionTextBOx.nextElementSibling.textContent = "You must provide a description of the game";
+        
     }
 }
 
